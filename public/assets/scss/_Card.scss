@@ -1,0 +1,157 @@
+/*---- Card Style Start Here ----*/
+.card {
+    &-style1 {
+        border-radius: $border_radius_sm;
+        border: none;
+        
+        .card {
+            &-title {
+                font-size: 1.3rem;
+                color: $text_color;
+                margin-left: auto;
+                margin-right: auto;
+                transition: $ease_03;
+                a {
+                    color: $text_color;
+                    transition: $ease_03;
+                    &:hover {
+                        color: $brand;
+                    }
+                }
+            }
+            &-icon {
+                width: 50px;
+                height: 50px;
+                background-color: $brand;
+                color: $white;
+                border-radius: $border_radius_xs;
+                margin: 0 auto 15px auto;
+                @include flex_center;
+
+                a {
+                    color: $white;
+                }
+            }
+            &-body {
+                position: relative;
+                padding: $spacing_sm;
+                a:hover {
+                    .card-title {
+                        color: $brand;
+                    }
+                }
+            }
+        }
+    }
+    &-townhall {
+        .badge {
+            margin-bottom: $spacing_xs;
+            @media (min-width: 1600px) {
+                position: absolute;
+                left: $spacing_sm;
+                top: $spacing_sm;
+            }   
+        }
+    }
+    &-style2 {
+        border-radius: $border_radius_sm;
+        border: none;
+        .card {
+            &-title {
+                margin-bottom: $spacing_sm;
+                font-size: 1.2rem;
+            }
+            &-top {
+                @include flex;
+                position: relative;
+                .card-options {
+                    top: 0;
+                }
+            }
+            &-body {
+                padding: $spacing_sm;
+            }
+            &-user {
+                @include user;
+                margin-right: $spacing_sm;
+            }
+            &-right {
+                flex: 1;
+                .notice {
+                    &-name {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        small {
+                            font-size: 0.7rem;
+                        }
+                    }
+                    &-time {
+                        line-height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &-notice {
+        padding: $spacing_sm;
+        &:not(:last-child) {
+            margin-bottom: $spacing_sm;
+        }
+        &:nth-child(odd) {
+            background-color: $orange_light;
+        }
+        &:nth-child(even) {
+            background-color: $secondary_light;
+        }
+    }
+    &-icons-group {
+        list-style-type: none;
+        @include flex_align_center;
+        flex-direction: initial;
+        li {
+            &:not(:last-child) {
+                margin-right: $spacing_sm;
+            }
+            a {
+                color: $text_light;
+                &:hover {
+                    color: $brand;
+                }
+            }
+        }
+    }
+    &-options {
+        position: absolute;
+        top: $spacing_xs + 5px;
+        right: $spacing_sm;
+
+        &-submenu {
+            transform: translate(0, 28px) !important;
+            min-width: 10rem;
+            &.dropdown {
+                &-menu {
+                    &:before, &:after {
+                        left: inherit;
+                        right: 15px;
+                    }
+                }
+            }
+            .dropdown {
+                &-item {
+                    align-items: center;
+                    padding: $spacing_options_dropdown_item;
+                    svg {
+                        width: 1.3rem;
+                        margin-right: $spacing_s;
+                    }
+                }
+            }
+        }
+    }
+    &-scroll {
+        max-height: 470px;
+        > .row:not(:last-child) {
+            margin-bottom: $spacing_md;
+        }
+    }
+}

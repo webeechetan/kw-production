@@ -1,0 +1,253 @@
+/*---- Menu Style ----*/
+.menu {
+    /* ---- Sidebar Menu Style ----*/
+    &-sidebar {
+        li {
+            position: relative;
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+            a {
+                color: $sidebar_link_color;
+                font-weight: 600;
+                padding: $spacing_sidenav_item;
+                transition: $ease_05;
+                font-size: 0.9rem;
+                @include flex_align_center;
+                display: grid;
+                grid-template-columns: 30px 1fr;
+
+                /*---- Sidebar Menu Icon Style ----*/
+                i {
+                    font-size: 18px;
+                    color: $text-color;
+                    transition: $ease_05;
+                }
+
+                &:after {
+                    content: "";
+                    width: 6px;
+                    height: 100%;
+                    background-color: $brand;
+                    position: absolute;
+                    left: -100%;
+                    top: 0;
+                    border-radius: 0 4px 4px 0;
+                    transition: $ease_05;
+                }
+
+                &.active, &:hover {
+                    color: $brand;
+                    background-color: $sidebar_active_bg_color;
+
+                    i {
+                        color: $brand;
+                    }
+                    
+                    &:after {
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---- Navbar ----*/
+.navbar {
+    padding: 0;
+    flex: 1 1;
+    &-expand-lg {
+        .navbar-nav .nav-link {
+            padding: $spacing_xs $spacing_sm;
+        }
+    }
+    &-light {
+        .navbar-nav {
+            .nav-link {
+                color: $text_color;
+            }
+        }   
+    }
+    &-nav {
+        .nav-item {
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+        .dropdown {
+            a.nav-link {
+                padding: 0;
+                display: flex;
+            }
+            &-toggle {
+                &:after {
+                    display: none;
+                }
+            }
+            &-notification {
+                > .dropdown-toggle {
+                    &:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        right: 23px;
+                        width: 7px;
+                        height: 7px;
+                        border-radius: $border_radius;
+                        background: $brand;
+                        cursor: pointer;
+                        box-shadow: 0 3px 15px rgb(247, 45, 0.9);
+                        animation: pulse 2s infinite;
+                    }
+                }
+            }
+        }
+        .nav-link {
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.dropdown {
+    &-menu {
+        min-width: 22rem;
+        background-color: $white;
+        background-clip: padding-box;
+        box-shadow: $box_shadow;
+        border: 1px solid $light;
+        position: relative;
+        overflow: hidden;
+        &[data-bs-popper] {
+            right: 0;
+            left: inherit;
+            margin-top: 0;
+            padding: 0;
+            z-index: 99;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            border-bottom: 10px solid $light;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: -8.5px;
+            right: 16px;
+            border-bottom: 10px solid #fff;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+
+        li:not(:last-child) {
+            border-bottom: 1px solid $border_light2;
+        }
+    }
+    &-account{
+        min-width: 16rem;
+    }
+    &-item {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 14px;
+        padding: $spacing_dropdown_item;
+        position: relative;
+        &:hover, &:focus {
+            background-color: $light;
+            color: $text_color;
+            .dropdown-subIcon {
+                background-color: $brand;
+                color: $white;
+            }
+            .dropdown-notifications-archive {
+                display: inline-block;
+            }
+        }
+        &-icon {
+            width: 30px;
+            i {
+                font-size: 18px
+            }
+        }
+    }
+    &-header {
+        @include flex_align_center;
+        padding: $spacing_dropdown_header;
+        border-bottom: 1px solid $border_light2;
+        color: $text_color;
+        h6 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: $text_color;
+        }
+    }
+    &-footer{
+        padding: 15px;
+        text-align: center;
+    }
+    &-menu-items {
+        .dropdown {
+            &-item {
+                border-bottom: 1px solid $border_light2;
+            }
+        }
+    }
+    &-button {
+        padding: $spacing_dropdown_header;
+        .btn {
+            padding: 5px 15px;
+            justify-content: center;
+            font-size: 0.8em;
+        }
+    }
+    &-subIcon { 
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $light;
+        border-radius: $border_radius;
+        margin-right: $spacing_xs;
+        transition: $ease_03;
+        svg {
+            font-size: 18px;
+        }
+    }
+    &-user {
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $light;
+        border-radius: $border_radius;
+        margin-right: $spacing_xs;
+        transition: $ease_03;
+        overflow: hidden;
+    }
+    &-search {
+        .dropdown-menu {
+            border-color: transparent;
+            min-width: inherit;
+        }
+    }
+    &-menu-end {
+        .dropdown-menu:before, .dropdown-menu:after {
+            left: inherit;
+            right: 22px;
+            width: 20px;
+        }
+    }
+    &-notifications-archive {
+        display: none;
+        transition: all ease .5s;
+    }
+}

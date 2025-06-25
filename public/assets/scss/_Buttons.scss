@@ -1,0 +1,400 @@
+/*---- Buttons Style Start Here ----*/
+.btn {
+    padding: $spacing_btn;
+    font-weight: 400;
+    transition: $ease_05;
+    border-radius: $border_radius_xs;
+
+    &-primary {
+        color: $white;
+        background-color: $brand;
+        border: 1px solid $brand;
+        border-radius: $border_radius_xs;
+        &:hover, &:focus, &:active, &:first-child:active {
+            color: $white;
+            background-color: $primary_hover;
+            border: 1px solid $primary_hover;
+        }
+        &-border {
+            border: 1px solid $brand;
+            &:hover, &:focus, &:active, &:first-child:active {
+                background-color: $yellow_hover;
+                border-color: $yellow_hover;
+            }
+        }
+    }
+
+    &-secondary {
+        color: $white;
+        background-color: $secondary;
+        border: 1px solid $secondary;
+        border-radius: $border_radius_xs;
+        &:hover, &:focus, &:active, &:first-child:active {
+            color: $white;
+            background-color: $secondary_hover;
+            border: 1px solid $secondary_hover;
+        }
+    }
+
+    &-yellow {
+        color: $text_color;
+        background-color: $yellow_light;
+        border: 1px solid $text_form;
+        border-radius: $border_radius_xs;
+        &:hover, &:focus, &:active {
+            color: $text_color;
+            background-color: $yellow;
+            border: 1px solid $yellow;
+        }
+    }
+
+    &-success {
+        color: $white;
+        background-color: $success;
+        border: 1px solid $success;
+        border-radius: $border_radius_xs;
+        &:hover, &:focus, &:active {
+            color: $white;
+            background-color: $dark;
+            border: 1px solid $dark;
+        }
+    }
+
+    /* ----- Icon ----- */
+    &-icon {
+        width: 30px;
+        height: 30px;
+        @include inline_flex_center;
+        border: 1px solid $grey_xd;
+        padding: 0;
+        font-size: 14px;
+        background-color: $grey;
+        border-radius: $border_radius_xs;
+        transition: $ease_03;
+
+        &:hover, &:focus {
+            background-color: $brand_light;
+            color: $brand;
+        }
+
+        &-primary {
+            border-color: $brand;
+            background-color: $brand_light;
+        }
+
+        &-edit {
+            border-color: $warning;
+            background-color: $warning_light;
+            
+            &:hover,  &:focus {
+                background-color: $warning;
+                color: #fff;
+            }
+        }
+
+        &-danger {
+            border-color: $danger;
+            background-color: $danger_light;
+            
+            &:hover,  &:focus {
+                background-color: $danger;
+                color: #fff;
+            }
+        }
+
+        &-rounded {
+            border-radius: $border_radius;
+        }
+    }
+
+    /*---- Actions ----*/
+    &-action {
+        .btn {
+            &-icon {
+                width: 35px;
+                height: 35px;
+                border-radius: $border_radius_xs;
+                @include flex_center;
+                transition: $ease_03;
+                svg {
+                    font-size: 1.2rem;
+                }
+                &:not(:last-child) {
+                    margin-right: $spacing_xs;
+                }
+            }
+            &:not(:last-child) {
+                margin-right: $spacing_xs;
+            }
+            &-edit {
+                background-color: $warning_light;
+                color: $text_color;
+                &:hover {
+                    background-color: $warning;
+                }
+            }
+            &-delete {
+                background-color: $danger_light;
+                color: $text_color;
+                &:hover {
+                    background-color: $danger;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    /*---- Options ----*/
+    &-options {
+        padding: 0;
+        border: 1px solid $border_grey;
+        &:after {
+            display: none;
+        }
+        &:hover {
+            color: $brand;
+        }
+    }
+
+    /* ----- Border ----- */
+    &-border {
+        border: 1px solid $border_dark_grey;
+        border-radius: $border_radius_xs;
+        padding: $spacing_btn_xs;
+        transition: $ease_03;
+        background-color: $white;
+        display: inline-block;
+        line-height: 100%;
+
+        &:hover, &.active {
+            border-color: $brand;
+            color: $brand;
+        }
+
+        &-primary {
+            border: 1px solid $brand;
+            color: $brand;
+            &:hover, &.active {
+                background-color: $brand;
+                border-color: $brand;
+                color: #fff;
+            }
+        }
+        &-secondary {
+            border: 1px solid $secondary;
+            color: $secondary;
+            &:hover, &.active {
+                background-color: $secondary;
+                border-color: $secondary;
+                color: #fff;
+            }
+        }
+        &-success {
+            border: 1px solid $success;
+            color: $success;
+            &:hover, &.active {
+                background-color: $success;
+                border-color: $success;
+                color: #fff;
+            }
+        }
+        &-warning {
+            border: 1px solid $warning;
+            color: $yellow-dark;
+            &:hover, &.active {
+                background-color: $yellow-dark;
+                border-color: $yellow-dark;
+                color: #fff;
+            }
+        }
+        &-danger {
+            border: 1px solid $danger;
+            color: $danger;
+            &:hover, &.active {
+                background-color: $danger;
+                border-color: $danger;
+                color: #fff;
+            }
+        }
+        &-archived {
+            border: 1px solid $danger;
+            color: $danger;
+            &:hover, &.active {
+                background-color: $danger;
+                border-color: $danger;
+                color: $white;
+            }
+        }
+
+        &-sm {
+            font-size: 13px;
+            padding: 6px 10px;
+        }
+
+        &-rounded {
+            border-radius: $border-radius_rounded;
+        }
+    }
+
+    &_link {
+        transition: $ease_03;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        &:hover {
+            color: $brand;
+        }
+
+        &-border {
+            border-bottom: 1px solid $grey_xd;
+
+            &:hover {
+                border-color: $brand;
+            }
+        }
+
+        &-primary {
+            color: $brand;
+        }
+
+        &-sm {
+            font-size: 13px;
+        }
+    }
+
+    /* ----- Button Submit ----- */
+    &-smt {
+        text-transform: uppercase;
+    }
+
+    /* ----- Button Batch ----- */
+    &-batch {
+        background-color: #fff;
+        border: 1px solid $grey_xd;
+        padding: 3px 10px;
+        border-radius: $border_radius_rounded;
+        font-size: 12px;
+        font-weight: 500;
+        color: $dark;
+        display: inline-block;
+        text-transform: capitalize;
+
+        &.active {
+            background-color: $success;
+            border-color: $success;
+            color: #fff;
+        }
+
+        &-bg {
+            padding: 3px 10px;
+            border-radius: $border_radius_rounded;
+            font-size: 12px;
+            color: $text_color;
+            display: inline-block;
+            background-color: $grey;
+            font-weight: 500;
+
+            &-success {
+                background-color: $success;
+                color: #fff;
+                border-color: $success;
+            }
+
+            &-primary {
+                background-color: $brand;
+                color: #fff;
+                border-color: $brand;
+            }
+
+            &-secondary   {
+                background-color: $secondary;
+                color: #fff;
+                border-color: $secondary;
+            }
+
+            &-danger   {
+                background-color: $danger;
+                color: #fff;
+                border-color: $danger;
+            }
+        }
+
+        &-success {
+            border-color: $success;
+            color: $success;
+        }
+        &-primary {
+            border-color: $brand;
+            color: $brand;
+        }
+        &-secondary {
+            border-color: $secondary;
+            color: $secondary;
+        }
+        &-warning {
+            border-color: $warning;
+        }
+        &-danger {
+            color: $danger;
+            border-color: $danger;
+
+            &.btn:hover {
+                background-color: $danger;
+                color: #fff;
+            }
+        }
+        &-avatar {
+            padding: 3px 10px 3px 3px;
+        }
+    }
+
+    &-lg {
+        padding: 10px 20px;
+        font-size: 16px;
+        transition: $ease_03;
+    }
+    
+    &-sm {
+        padding: $spacing_btn_xs;
+        font-size: 14px;
+        transition: $ease_03;
+    }
+
+    &-xs {
+        padding: 2px 12px;
+        font-size: 11px;
+        transition: $ease_03;
+    }
+
+    /* ----- Button Group ----- */
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 10px;
+
+        &-full {
+            &-2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .btn-batch {
+            &-profile {
+                padding: 2px 10px 2px 3px;
+                @include inline_flex_align_center;
+                img {
+                    width: 20px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+/*---- Buttons Style End Here ----*/

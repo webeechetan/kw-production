@@ -1,0 +1,26 @@
+/*---- Custom Modal ----*/
+.modal {
+    &-custom {
+        .modal-header {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        .btn-close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background-size: 0.8em;
+            margin: 0;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            background-color: $grey;
+            z-index: 9999;
+            transition: $ease_03;
+        }
+        .modal-body {
+            padding: $spacing_md;
+        }
+    }
+}

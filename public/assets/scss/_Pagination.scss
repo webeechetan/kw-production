@@ -1,0 +1,61 @@
+/*---- Pagination Style Start Here ----*/
+.pagination {
+    display: flex;
+}
+
+.page {
+    &-item {
+        &:not(:first-child) .page-link {
+            margin-left: 12px;
+        }
+        &:last-child, &:first-child {
+            .page-link {
+                border-radius: $pagination_border_radius;
+            }
+        }
+    
+        &.active .page-link {
+            z-index: 3;
+            color: $pagination_active_color;
+            background-color: $pagination_active_bg;
+            border-color: $pagination_active_border_color;
+        }
+    
+        &.disabled .page-link {
+            color: $pagination_disabled_color;
+            pointer-events: none;
+            background-color: $pagination_disabled_bg;
+            border-color: $pagination_disabled_border_color;
+        }
+    }
+    &-link {
+        position: relative;
+        @include flex_center; 
+        color: $pagination_color;
+        text-decoration: none;
+        background-color: $pagination_bg;
+        border: $pagination_border_width solid $pagination_border_color;
+        transition: $ease_03;
+        border-radius: $pagination_border_radius;
+        font-size: 14px;
+        width: 40px;
+        height: 40px;
+    
+        &:hover {
+            z-index: 2;
+            color: $pagination_hover_color;
+            text-decoration: none;
+            background-color: $pagination_hover_bg;
+            border-color: $pagination_hover_border_color;
+        }
+    
+        &:focus {
+            z-index: 3;
+            color: $pagination_focus_color;
+            background-color: $pagination_focus_bg;
+        }
+    }
+}
+
+
+/*---- Pagination Style End Here ----*/

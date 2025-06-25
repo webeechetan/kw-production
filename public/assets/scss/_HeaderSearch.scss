@@ -1,0 +1,47 @@
+/*---- Topbar Search ----*/
+.search {
+    &-result {
+        &-content {
+            background-color: $white;
+            border-radius: $border_radius_xs;
+            position: relative;
+            margin-top: $spacing_sm;
+            &-inner {
+                > a:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+            &-icon {
+                width: 30px;
+                height: 30px;
+                border-radius: $border_radius;
+                background-color: $light;
+                color: $brand;
+                @include flex_center;
+                svg {
+                    width: 20px;
+                }
+            }
+            hr {
+                opacity: 0.1;
+            }
+        }
+    }
+    &-field {
+        display: flex;
+        align-items: center;
+        border: 1px solid $border_light2;
+        border-radius: $border_radius_xs;
+        margin-bottom: $spacing_sm;
+        &-btn {
+            color: $brand;
+            padding: $spacing_xs $spacing_sm;
+        }
+        .form-control {
+            border: none;
+            &:focus {
+                border: none;
+            }
+        }
+    }
+} 

@@ -1,0 +1,27 @@
+.draggable-source--is-dragging {
+    opacity: 0.5;
+    background-color: #48914d;
+  }
+  
+  .draggable-source--is-dragging .task {
+    color: #fff;
+  }
+  
+  .draggable-source--is-dragging .task:hover {
+    background-color: #48914d;
+    color: #fff;
+  }
+  
+  .draggable--over {
+    border: 1px dashed #48914d;
+  }
+  
+  .draggable-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .draggable-container--over{
+    border: 1px dashed #48914d;
+  }

@@ -1,0 +1,86 @@
+/*---- Invite Style Start here ----*/
+.invite {
+    &-content {
+        @include flex_center;
+        min-height: 100vh;
+
+        &-left {
+            &-btm {
+                max-width: 530px;
+                margin-top: 50px;
+                @media (max-width: 991px) {
+                    margin: 40px auto 0;
+                }
+            }
+            @media (max-width: 1200px) {
+                padding-top: 50px;
+            }
+            @media (max-width: 991px) {
+                padding-top: 0;
+            }
+        }
+        @media (max-width: 991px) {
+            text-align: center;
+        }
+    }
+    &-gamil {
+        @include flex_align_end;
+        margin-bottom: $spacing_sm;
+        &-icon {
+            margin-right: 10px;
+            img {
+                max-width: 30px;
+            }
+        }
+        &-text {
+            border-bottom: 1px solid $border;
+        }
+        @media (max-width: 991px) {
+            justify-content: center;
+        }
+    }
+    &-copy-link {
+        position: relative;
+        overflow: hidden;
+
+        &-text {
+            border: 1px solid $border_form;
+            border-right: none;
+            padding: $spacing_xs;
+            border-radius: $border_radius_xs 0 0 $border_radius_xs;
+            width: calc(100% - 120px);
+            text-align: left;
+            color: $text_form;
+            line-height: normal;
+        }
+        &-btn {
+            min-width: 120px;
+            background-color: $brand;
+            border: 1px solid $brand;
+            color: $white;
+            padding: $spacing_xs $spacing_sm;
+            border-radius: 0 $border_radius_xs $border_radius_xs 0;
+            text-align: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            line-height: normal;
+            font-weight: 500;
+            transition: $ease_03;
+            &:hover {
+                background-color: $secondary;
+                border: 1px solid $secondary;
+                color: $white;
+            }
+        }
+    }
+    &-team-img {
+        img {
+            @media (max-width: 1400px) {
+                width: 450px;
+            }
+        }
+    }
+}
+
+/*---- Invite Style End Here ----*/

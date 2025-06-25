@@ -1,0 +1,225 @@
+/*---- Form Style Start Here ----*/
+.form {
+    &-control, &-select {
+        border: 1px solid $border_form;
+        padding: $spacing_xs $spacing_sm;
+        border-radius: $border_radius_xs;
+        font-size: 1rem;
+        line-height: normal;
+        text-align: left;
+        color: $text_color;
+
+        &:focus {
+            outline: none;
+            box-shadow: none ;
+            border: 1px solid $brand;
+        }
+        &::placeholder {
+            color: $text_form;
+        }
+        @media (min-width: 768px) {
+            min-height: 50px;
+        }
+    }
+    &-select {
+        &-sm {
+            min-height: inherit;
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+    }
+    &-control {
+        &-typeStyle {
+            border: 1px solid $grey;
+            padding: 0 $spacing_s;
+            transition: $ease_03;
+            &:hover, &:active, &:focus, &:focus-visible {
+                outline: none;
+                border-color: $brand;
+            }
+        }
+    }
+    &-check {
+        text-align: left;
+        &-input {
+            border: 1px solid $brand;
+            &:checked {
+                background-color: $brand;
+                border-color: $brand;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: none;
+                border-color: $brand;
+            }
+            &.task-switch {
+                &:focus {
+                    border-color: $brand;
+                }
+            }
+        }
+    }
+    &-field {
+        position: relative;
+        .form-control, .form-select {
+            padding: $spacing_xs $spacing_sm $spacing_xs 65px;
+        }
+        &-icon {
+            color: $brand;
+            position: absolute;
+            top: 8px;
+            left: 15px;
+            padding-right: 15px;
+            border-right: 1px solid $border_form;
+            @include flex_align_center;
+
+            i  {
+                font-size: 22px;
+            }
+
+            @media (min-width: 768px) {
+                top: 10px;
+                min-height: calc(50px - 20px);
+            }
+        }
+    }
+
+    &-file_upload {
+        position: relative;
+        #formFile {
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        &-box {
+            font-size: 14px;
+            background-color: $success_light;
+            border-radius: $border_radius_xs;
+            padding: $spacing_s;
+            text-align: center;
+
+            &-icon {
+                font-size: 20px;
+                width: 35px;
+                height: 35px;
+                background-color: $success_light;
+                color: $success;
+                @include flex_center;
+                border: 1px solid $success;
+                border-radius: $border-radius_xs;
+                margin: 0 auto $spacing_xs;
+            }
+
+            &-text {
+                font-size: 12px;
+                text-transform: uppercase;
+                color: $success;
+                letter-spacing: 1px;
+                font-weight: 600;
+            }
+        }
+        &-logo {
+            .form-file_upload {
+                &-box {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    background-color: transparent;
+                    padding: 0;
+
+                    &-icon {
+                        margin: 0;
+                    }
+        
+                    &-text {
+                        background-color: $success_light;
+                        border-radius: $border-radius_xs;
+                        height: 35px;
+                        padding: 0 $spacing_xs;
+                        width: 100%;
+                        @include flex_align_center;
+                    }
+                }
+            }   
+        }
+
+        &-valText {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    }
+
+    &-style {
+        padding: 10px 15px;
+        background-color: $light;
+        color: $text_color;
+        margin: 0;
+        border: none;
+        width: 100%;
+        border-radius: $border-radius_xs;
+
+        &:focus, &:active {
+            outline: none;
+            box-shadow: none;
+            border: none;
+        }
+
+        &::placeholder {
+            color: $text-light;
+        }
+
+        + .select2-container--default .select2-selection--single {
+            padding: 10px 15px;
+            background-color: $light;
+            color: $text_color;
+            height: inherit;
+        }
+    }
+}
+
+.was-validated {
+    .form-control:valid:focus {
+        outline: none;
+        box-shadow: none ;
+        border: 1px solid $secondary;
+    }
+}
+
+input {
+    &:-webkit-autofill, &:-webkit-autofill:focus {
+        box-shadow: 0 0 0 50px $white inset;
+        -webkit-box-shadow: 0 0 0 50px $white inset;
+        -webkit-text-fill-color: $text_form;
+    }
+}
+
+.custom-select {
+    position: relative;
+    .form-control, .form-style {
+        padding: 10px 15px;
+        padding-right: 35px;
+        min-height: inherit;
+        border-color: $grey_xd;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+    &:after {
+        content: '';
+        background: #eee url('/assets/images/chevron-down.png') no-repeat center/16px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: $border_radius_xs;
+    }
+}
+/*---- Form Style End Here ----*/

@@ -1,0 +1,145 @@
+$brand: #f83890;
+$brand_light: #ffe6f1;
+$secondary: #7407ff;
+$secondary_light: #e8ddf7;
+$dark: #191919; 
+$orange:  #FF5E0E; 
+$yellow: #f7d306;
+$yellow_light: #fdf4c1;
+$yellow_dark: #cdb110;
+$orange_light: #FFFBFD;
+$grey: #eee;
+$grey_xd: #ddd;
+$scrollbar_color: $yellow_light;
+$white: #fff;
+
+$light: #f6f5f5;
+$text_light: #9c9c9c;
+$text_grey: #d1d1d1;
+$text_color: #191919;
+$text_form: $text_light;
+
+$link_hover: #4c1c90;
+$bg_dropdown: $secondary;
+$dropdown_link_hover: #974eff;
+
+// Sidebar
+$sidebar_link_color: $dark;
+$sidebar_icon_color: $white;
+$sidebar_line_color: $secondary;
+$sidebar_active_bg_color: $light;
+$sidebar_active_color: $secondary;
+$sidebar_icon_active_color: $secondary;
+
+// Border
+$border: $text_light;
+$border_light: #f5f5f5;
+$border_light2: #eee;
+$border_grey: #eee;
+$border_dark_grey: #ddd;
+$border_form: #ced4da;
+
+/*---- Actions ----*/
+$success: #48914d;
+$success_light: #dae9db;
+$danger: #ff0000;
+$danger_light: #fedddc;
+$warning: #e7bf1d;
+$warning_light: #fff7d8;
+$progress: #7407ff;
+$progress_light: #e5d1ff;
+
+/*---- Buttons Colors ----*/
+$primary_hover: $secondary;
+$secondary_hover: $brand;
+$yellow_hover: $yellow;
+
+/*---- Pagination ---*/
+$pagination_color: $text_color;
+$pagination_bg: #fff;
+$pagination_border_width: 1px;
+$pagination_border_color: $grey;
+$pagination_border_radius: 30px;
+
+$pagination_hover_color: $white;
+$pagination_focus_color: $pagination_hover_color;
+$pagination_active_color: $pagination_hover_color;
+
+$pagination_hover_bg: $brand;
+$pagination_focus_bg: $pagination_hover_bg;
+$pagination_active_bg: $pagination_hover_bg;
+
+$pagination_hover_border_color: $pagination_hover_bg;
+$pagination_focus_border_color: $pagination_hover_border_color;
+$pagination_active_border_color: $pagination_hover_border_color;
+
+$pagination_disabled_color: $text_light;
+$pagination_disabled_bg: $grey;
+$pagination_disabled_border_color: $pagination_disabled_bg;
+
+/*---- Table ----*/ 
+$table_header_color: $secondary;
+
+/*---- Default Classies ----*/
+.text {
+    &-primary {
+        color: $brand !important;
+    }
+    &-secondary {
+        color: $secondary !important;
+    }
+    &-yellow {
+        color: $yellow !important;
+        &-dark {
+            color: #e1c630 !important;
+        }
+    }
+    &-orange {
+        color: $orange !important;
+    }
+    &-success {
+        color: $success !important;
+    }
+    &-warning {
+        color: $warning !important;
+    }
+    &-progress {
+        color: $progress !important;
+    }
+    &-link {
+        text-decoration: underline;
+        color: $brand;
+        &:hover {
+            color: $secondary;
+        }
+    }
+    &-grey {
+        color: $text_grey !important;
+    }
+    &-dark-grey {
+        color: $grey_xd;
+    }
+    &-light {
+        color: $text_light;
+    }
+}
+
+/*---- Background Colors ----*/
+.bg {
+    &-primary {
+        background-color: $brand !important;
+    }
+    &-secondary {
+        background-color: $secondary !important;
+    }
+    &-light {
+        background-color: $light !important;
+    }
+    &-md {
+        @media (min-width: 768px) {
+            &-secondary {
+                background-color: $secondary !important;
+            }
+        }
+    }
+}

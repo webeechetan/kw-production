@@ -1,0 +1,77 @@
+/*---- Sign In & Signup Style Start Here ----*/
+.signin {
+    &-content {
+        &-left {
+            min-height: 100vh;
+            @include flex_center;
+            @media (max-width: 767px) {
+                min-height: inherit;
+                padding: $spacing_md;
+            }
+        }
+        &-right {
+            width: 575px;
+            max-width: 100%;
+            padding: 30px 70px;
+            @media (max-width: 991px) {
+                padding: 30px;
+            }
+            @media (max-width: 575px) {
+                padding: 0 15px 15px;
+            }
+        }
+    }
+    &-google {
+        &-btn {
+            @include flex_center;
+            border: 1px solid $border;
+            border-radius: $border_radius_xs;
+            padding: $spacing_btn;
+            transition: $ease_05;
+            margin-bottom: $spacing_xs;
+            svg {
+                max-width: 24px;
+                margin-right: 7px;
+            }
+            &:hover {
+                border-color: $yellow;
+                color: $brand;
+            }
+        }
+    }
+}
+.signup {
+    &-content {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        &:before, &:after {
+            content: "";
+            background: url('../images/signup-img1.png') no-repeat left bottom;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            @media (max-width: 991px) {
+                display: none;
+            }
+        }
+        &:after {
+            background: url('../images/signup-img2.png') no-repeat right bottom;
+        }
+        > .container {
+            z-index: 9;
+            position: relative;
+        }
+    }
+    &-form {
+        width: 600px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    &-welcome-img {
+        transform: translateX(16px);
+    }
+}
+/*---- Sign In & Signup Style End Here ----*/

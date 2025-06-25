@@ -1,0 +1,19 @@
+/* ---- Task Style Start Here ----*/
+.task {
+    &-container {
+        @include task_container;
+    }
+    &-label {
+        flex: 1;
+        padding: 0 $spacing_xs;
+    }
+    &-action-btn {
+        flex: 0 0 35px;
+    }
+    &-btn-right {
+        display: flex;
+        justify-content: space-between;
+        flex: 0 0 70px;
+    }
+}
+/* ---- Task Style Start Here ----*/

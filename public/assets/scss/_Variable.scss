@@ -1,0 +1,219 @@
+// ===== Variables ===== //
+
+/*----   Family ----*/
+$main-font: 'Rubik', sans-serif;
+$jost: 'Jost', sans-serif;
+
+/*---- Transition Ease ----*/
+$ease_03: all 0.3s ease;
+$ease_05: all 0.5s ease;
+
+/*---- Border Radius ----*/
+$border_radius: 50%;
+$border_radius_xs: 4px;
+$border_radius_sm: 10px;
+$border_radius_md: 20px;
+$border_radius_rounded: 30px;
+$border_radius_checkbox: 3px;
+
+/*---- Spacing ----*/
+$spacing_xs: 10px;
+$spacing_s: 15px;
+$spacing_sm: 20px;
+$spacing_md: 30px;
+$spacing_lg: 50px;
+$spacing_xl: 70px;
+$spacing_xll: 90px;
+
+$spacing_btn: 0.5rem 1.4rem;
+$spacing_btn_sm: 7px 15px; 
+$spacing_btn_xs: 7px 10px;
+
+$spacing_sidenav_item: 12px 25px;
+$spacing_sidenav_btm: 12px 25px;
+$spacing_dropdown_item: 10px 15px;
+$spacing_options_dropdown_item: 7px 15px;
+$spacing_dropdown_header: 15px;
+$spacing_dropdown_btm: 15px;
+
+/*---- Pagination ----*/
+$pagination-border-width: 1px;
+
+/*---- Box Shadow ----*/
+$box_shadow: 0 3px 30px #eee;
+$box_shadow_light: 0 3px 30px rgba(0,0,0,0.07);
+$box_shadow_xtra_light: 0 3px 25px rgba(0,0,0,0.03);
+
+/*---- Table Spacing ----*/
+$table_header_spacing: 15px 20px;
+
+/*---- Image sizes ----*/
+$townhall_logo: 120px;
+$townhall_dp: 100px;
+$team_dp: 75px;
+
+/*===== Mixins =====*/
+
+/*---- User ----*/
+@mixin user {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $light;
+    overflow: hidden;
+}
+
+@mixin user_assignee {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $light;
+    overflow: hidden;
+}
+
+/* ----- Date Icon ----- */
+@mixin icon_style_round {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $border_dark_grey;
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/*---- Box Item ----*/
+@mixin box_item {
+    background: $white;
+    border-radius: $border_radius_sm;
+    padding: $spacing_sm $spacing_md;
+    @media (max-width: 1440px) {
+        padding: $spacing_xs $spacing_sm;
+    }
+}
+
+/*---- Task Item ----*/
+@mixin task_container {
+    display: flex;
+    flex-wrap: wrap;
+    background: $white;
+    border-radius: $border_radius_sm;
+    padding: $spacing_xs;
+    border: 1px solid $border_light;
+}
+
+/*---- Flex Center ----*/
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*---- Flex Center ----*/
+@mixin flex_center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+@mixin inline_flex_center {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*---- Flex Justify Center ----*/
+@mixin flex_justify_center {
+    display: flex;
+    justify-content: center;
+}
+
+/*---- Flex Align Center ----*/
+@mixin flex_align_center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin inline_flex_align_center {
+    display: inline-flex;
+    align-items: center;
+}
+
+/*---- Flex Align End ----*/
+@mixin flex_align_end {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+/*---- Flex Direction Column ----*/
+@mixin flex_direction_column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/*---- Rounded Box ----*/
+@mixin rounded_box_50 {
+    width: 50px;
+    height: 50px;
+    border-radius: $border_radius_xs;
+    @include flex_center;
+}
+
+/* ----- Scrollbar ----- */
+@mixin custom_scrollbar {
+    &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: none;
+        border-radius: 7px;
+        background-color: $light;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $scrollbar_color;
+    }
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: transparent;
+    }
+}
+
+/* ----- Grid Css ----- */
+.gap {
+    &-10 {
+        gap: $spacing_s;
+    }
+    &-20 {
+        gap: $spacing_sm;
+    }
+}
+.grid_col {
+    display: grid;
+    &-repeat {
+        &-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        &-5 {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        &-6 {
+            grid-template-columns: repeat(6, 1fr);
+        }
+        &-7 {
+            grid-template-columns: repeat(7, 1fr);
+        }
+        &-8 {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+}

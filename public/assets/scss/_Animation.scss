@@ -1,0 +1,48 @@
+/*---- Rocket Animation ----*/
+.animation {
+    &-rocket {
+        -webkit-animation: rocket 0.2s linear infinite;
+        animation: rocket 0.2s linear infinite;
+    }
+}
+@keyframes rocket {
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(-2px, -2px) rotate(0deg);
+    }
+}
+
+/*---- Pulse ----*/
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(247, 45, 102, 0.9);
+    }
+
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(247, 45, 102, 0);
+    }
+
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(247, 45, 102, 0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(247, 45, 102, 0.9);
+        box-shadow: 0 0 0 0 rgba(247, 45, 102, 0.7);
+    }
+
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(247, 45, 102, 0);
+        box-shadow: 0 0 0 10px rgba(247, 45, 102, 0);
+    }
+
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(247, 45, 102, 0);
+        box-shadow: 0 0 0 0 rgba(247, 45, 102, 0);
+    }
+}

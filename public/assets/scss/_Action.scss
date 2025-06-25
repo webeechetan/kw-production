@@ -1,0 +1,19 @@
+/*---- All Action Style ----*/
+.action {
+    &-circle {
+        @include flex_center;
+        flex: 0 0 30px;
+        max-width: 30px;
+        height: 30px;
+        color: $grey;
+        border-radius: $border_radius;
+        border: 1px solid $border_light;
+        cursor: pointer;
+        transition: $ease_03;
+        
+        &:hover {
+            color: $text_color;
+            border-color: $border;
+        }
+    }
+}

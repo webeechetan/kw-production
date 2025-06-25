@@ -1,0 +1,329 @@
+/*---- Datatable Style Start Here ----*/
+table {
+    &.dataTable {
+    td.dataTables_empty {
+        text-align: center;
+    }
+    th.dataTables_empty {
+        text-align: center;
+    }
+    > thead {
+        >tr {
+            >th {
+                padding: $table_header_spacing;
+                &:active {
+                    outline: none;
+                }
+                &:not(.sorting_disabled) {
+                    padding-right: 30px;
+                }
+            }
+            >td {
+                &:active {
+                    outline: none;
+                }
+                &:not(.sorting_disabled) {
+                    padding-right: 30px;
+                }
+            }
+        }
+        .sorting {
+            cursor: pointer;
+            position: relative;
+            &:before {
+                position: absolute;
+                bottom: 0.5em;
+                display: block;
+                opacity: 0.3;
+                right: 1em;
+                content: "↑";
+                bottom: 10px;
+            }
+            &:after {
+                position: absolute;
+                bottom: 0.5em;
+                display: block;
+                opacity: 0.3;
+                right: 0.5em;
+                content: "↓";
+                bottom: 10px;
+            }
+        }
+        .sorting_asc {
+            cursor: pointer;
+            position: relative;
+            &:before, &:after {
+                position: absolute;
+                opacity: 0.3;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                display: flex;
+                align-items: center;
+            }
+            &:before {
+                right: 1em;
+                content: "↑";
+                opacity: 1;
+            }
+            &:after {
+                right: 0.5em;
+                content: "↓";
+            }
+        }
+        .sorting_desc {
+            cursor: pointer;
+            position: relative;
+            &:before {
+                position: absolute;
+                bottom: 0.5em;
+                display: block;
+                opacity: 0.3;
+                right: 1em;
+                content: "↑";
+                bottom: 10px;
+            }
+            &:after {
+                position: absolute;
+                bottom: 0.5em;
+                display: block;
+                opacity: 0.3;
+                right: 0.5em;
+                content: "↓";
+                bottom: 10px;
+                opacity: 1;
+            }
+        }
+        .sorting_asc_disabled {
+            cursor: pointer;
+            position: relative;
+            &:before {
+                position: absolute;
+                bottom: 0.5em;
+                display: block;
+                opacity: 0.3;
+                right: 1em;
+                content: "↑";
+                bottom: 10px;
+                opacity: 0;
+            }
+            &:after {
+                position: absolute;
+                bottom: 0.5em;
+                display: block;
+                opacity: 0.3;
+                right: 0.5em;
+                content: "↓";
+                bottom: 10px;
+            }
+        }
+        .sorting_desc_disabled {
+            cursor: pointer;
+            position: relative;
+            &:before {
+                position: absolute;
+                bottom: 0.5em;
+                display: block;
+                opacity: 0.3;
+                right: 1em;
+                content: "↑";
+                bottom: 10px;
+            }
+            &:after {
+                position: absolute;
+                bottom: 0.5em;
+                display: block;
+                opacity: 0.3;
+                right: 0.5em;
+                content: "↓";
+                bottom: 10px;
+                opacity: 0;
+            }
+        }
+    }
+    > tbody{
+        > tr{
+            > td{
+                padding: $table_header_spacing;
+                &:active {
+                    outline: none;
+                }
+                &:not(.sorting_disabled) {
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
+    }
+    >:not(caption)>*>* {
+        background-color: $light;
+        box-shadow: none;
+    }
+    &.table {
+        >:not(:first-child) {
+            border-top: none;
+        }
+        &-style1 {
+            >:not(caption)>*>* {
+                border-bottom-width: 0;
+            }
+            > thead {
+                > tr > th {
+                    background-color: $table_header_color;
+                    color: $white;
+                    &:first-child {
+                        border-radius: $border_radius_xs 0 0 $border_radius_xs;
+                    }
+                    &:last-child {
+                        border-radius: 0 $border_radius_xs $border_radius_xs 0;
+                    }
+                }
+            }
+            > tbody {
+                > tr {
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $border_light2;
+                        background-color: $white;
+                    }
+                    > td {
+                        &:first-child {
+                            border-radius: $border_radius_xs 0 0 $border_radius_xs;
+                        }
+                        &:last-child {
+                            border-radius: 0 $border_radius_xs $border_radius_xs 0;
+                        }
+                    }
+                }
+            }
+            .table-avatar {
+                @include flex_align_center;
+                > div:first-child {
+                    margin-right: $spacing_xs;
+                    @include rounded_box_50;
+                    background-color: $yellow_light;
+                }
+                > div:last-child {
+                    @include flex_direction_column;
+                }
+            }
+        }
+    }
+}
+div.dataTables_scrollHead {
+	table.dataTable {
+		margin-bottom: 0 !important;
+	}
+	table.table-bordered {
+		border-bottom-width: 0;
+	}
+}
+div.dataTables_scrollBody {
+	table {
+		border-top: none;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		thead {
+			.sorting {
+				&:before {
+					display: none;
+				}
+				&:after {
+					display: none;
+				}
+			}
+			.sorting_asc {
+				&:before {
+					display: none;
+				}
+				&:after {
+					display: none;
+				}
+			}
+			.sorting_desc {
+				&:before {
+					display: none;
+				}
+				&:after {
+					display: none;
+				}
+			}
+		}
+		tbody {
+			tr {
+				&:first-child {
+					th {
+						border-top: none;
+					}
+					td {
+						border-top: none;
+					}
+				}
+			}
+		}
+	}
+}
+div.dataTables_scrollFoot {
+	>.dataTables_scrollFootInner {
+		box-sizing: content-box;
+		>table {
+			margin-top: 0 !important;
+			border-top: none;
+		}
+	}
+}
+.datadelete-table-btn {
+	position: absolute;
+	left: 240px;
+	z-index: 999;
+}
+@media (min-width: 1200px) {
+	.dt-buttons.btn-group {
+		position: absolute;
+		top: 0;
+		left: 120px;
+	}
+}
+@media (max-width: 992px) {
+	.dt-buttons.btn-group {
+		position: relative;
+		display: flex;
+		margin: 0 auto;
+		justify-content: center;
+		right: 0;
+		left: 0;
+		margin-bottom: 10px;
+	}
+}
+@media (max-width:992px) {
+	.datadelete-table-btn {
+		position: relative;
+		display: flex;
+		margin: 0 auto;
+		justify-content: center;
+		right: 0;
+		left: 0;
+	}
+}
+
+.table-striped {
+    > tbody {
+        > tr {
+            &:nth-of-type(odd)>* {
+                --bs-table-accent-bg: inherit;
+                background-color: $light;
+            }
+        }
+    }
+}
+
+.table-hover {
+    > tbody {
+        > tr {
+            &:hover>* {
+                --bs-table-accent-bg: inherit;
+                background-color: $yellow_light;
+            }
+        }
+    }
+}
+/*---- Datatable Style End Here ----*/

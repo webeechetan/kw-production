@@ -1,0 +1,57 @@
+/* ---- Sidebar Style ----*/
+.sidebar {
+
+    /*---- Sidebar Left Style ----*/
+    &-l {
+        width: 275px;
+        max-width: 100%;
+        max-height: calc(100vh - 55px);
+        background-color: $white;
+        position: relative;
+
+        /*---- Sidebar Left Top Style ----*/
+        &-top {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            flex: 1;
+             
+            img {
+                width: 150px;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 1440px) {
+            width: 200px;
+        }
+
+        &-btm {
+            padding: $spacing_sidenav_btm;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    &-profile {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing_sm;
+        &-img {
+            img {
+                max-width: 40px;
+            }
+        }
+        &-title {
+            font-size: 1rem;
+            margin-top: 5px;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+        &-mail {
+            color: $text_light;
+            font-size: 0.7rem;
+        }
+    }
+}
