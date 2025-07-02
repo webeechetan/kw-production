@@ -93,7 +93,7 @@ class Project extends Model
                 return $query->whereIn('id',$users_projects_ids);
            }
         }else{
-            $users_projects_ids = User::find(Auth::id())->projects->pluck('id')->toArray();
+            $users_projects_ids = User::find(Auth::id())->projects->pluck('projects.id')->toArray();
             return $query->whereIn('id',$users_projects_ids);
         }
     }
